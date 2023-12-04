@@ -103,12 +103,18 @@ public class Zoo {
         wally.name = "wally";
         Zebra marty = new Zebra();
         marty.name = "marty";
+        Elephant olivier = new Elephant();
+        olivier.name = "olivier";
+        Parrot perry = new Parrot();
+        perry.name = "perry";
 
         zoo.addAnimal(henk);
         zoo.addAnimal(elsa);
         zoo.addAnimal(dora);
         zoo.addAnimal(wally);
         zoo.addAnimal(marty);
+        zoo.addAnimal(olivier);
+        zoo.addAnimal(perry);
 
         StringBuilder commandsBuilder = new StringBuilder();
         commandsBuilder.append("The following commands are available:\n");

@@ -105,7 +105,7 @@ public class Zoo {
         marty.name = "marty";
         Elephant olivier = new Elephant();
         olivier.name = "olivier";
-        Parrot perry = new Parrot();
+        Hedgehog perry = new Hedgehog();
         perry.name = "perry";
 
         zoo.addAnimal(henk);

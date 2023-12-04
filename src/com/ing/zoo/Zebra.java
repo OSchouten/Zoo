@@ -2,7 +2,7 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Zebra {
+public class Zebra extends Herbivore{
     public String name;
     public String helloText;
     public String eatText;

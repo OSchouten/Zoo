@@ -2,7 +2,7 @@ package com.ing.zoo;
 
 import java.util.Random;
 
-public class Tiger {
+public class Tiger extends Carnivore{
     public String name;
     public String helloText;
     public String eatText;

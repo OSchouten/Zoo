@@ -1,4 +1,5 @@
 package com.ing.zoo;
 
-public abstract class Herbivore extends Animal{
+public interface Herbivore {
+    void eatLeaves();
 }

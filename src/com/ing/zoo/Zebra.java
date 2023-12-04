@@ -1,25 +1,12 @@
 package com.ing.zoo;
 
-import java.util.Random;
+public class Zebra extends Animal implements Herbivore {
 
-public class Zebra extends Herbivore{
-    public String name;
-    public String helloText;
-    public String eatText;
-    public String trick;
-
-    public Zebra()
-    {
+    public Zebra() {
+        super("zebra zebra");
     }
 
-    public void sayHello()
-    {
-        helloText = "zebra zebra";
-        System.out.println(helloText);
-    }
-
-    public void eatLeaves()
-    {
+    public void eatLeaves() {
         eatText = "munch munch zank yee bra";
         System.out.println(eatText);
     }

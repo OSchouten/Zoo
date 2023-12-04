@@ -1,4 +1,4 @@
 package com.ing.zoo;
 
-public abstract class Omnivore extends Animal {
+public interface Omnivore extends Carnivore, Herbivore {
 }

@@ -5,7 +5,7 @@ public abstract class Animal {
     protected String helloText;
     protected String eatText;
 
-    public Animal(String helloText) {
+    protected Animal(String helloText) {
         this.helloText = helloText;
     }
 

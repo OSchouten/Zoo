@@ -1,9 +1,8 @@
 package com.ing.zoo;
 
 public class Hippo extends Animal implements Herbivore {
-
     public Hippo() {
-        super("splash");
+        super("Splash");
     }
 
     public void eatLeaves() {

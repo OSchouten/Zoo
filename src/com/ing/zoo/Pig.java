@@ -19,6 +19,7 @@ public class Pig extends Animal implements Omnivore, PerformTrick {
         System.out.println(eatText);
     }
 
+    @Override
     public void performTrick() {
         Random random = new Random();
         int rnd = random.nextInt(2);

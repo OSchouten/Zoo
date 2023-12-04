@@ -9,6 +9,7 @@ class Elephant extends Animal implements Herbivore, PerformTrick {
         System.out.println("The elephant munches on leaves with its long trunk");
     }
 
+    @Override
     public void performTrick() {
         System.out.println("The elephant balances on its hind legs");
     }

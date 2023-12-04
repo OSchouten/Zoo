@@ -14,6 +14,7 @@ public class Tiger extends Animal implements Carnivore, PerformTrick {
         System.out.println(eatText);
     }
 
+    @Override
     public void performTrick() {
         Random random = new Random();
         int rnd = random.nextInt(2);

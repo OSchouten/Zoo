@@ -15,6 +15,11 @@ public class Zoo {
         animals.put(animal.name.toLowerCase(), animal);
     }
 
+    /**
+     * Processes a user command for interacting with animals in the zoo.
+     *
+     * @param input The user input string containing the command and, optionally, an animal name.
+     */
     public void processCommand(String input) {
         String[] splitCommand = input.split(",");
         if (splitCommand.length == 1) {
@@ -34,51 +39,53 @@ public class Zoo {
         }
     }
 
+    /**
+     * Performs a specific command for a given animal or all animals in the zoo.
+     *
+     * @param command        The command to be performed (e.g., "hello", "give leaves").
+     * @param specificAnimal The specific animal to perform the command on, or null to perform on all animals.
+     */
     private void performCommand(String command, Animal specificAnimal) {
-        switch (command) {
-            case "hello":
-                if (specificAnimal != null) {
-                    specificAnimal.sayHello();
-                } else {
-                    for (Animal animal : animals.values()) {
+        if (command.equals("hello") && specificAnimal != null) {
+            specificAnimal.sayHello();
+        }
+
+        for (Animal animal : animals.values()) {
+            switch (command) {
+                case "hello":
+                    if (specificAnimal == null) {
                         animal.sayHello();
                     }
-                }
-                break;
+                    break;
 
-            case "give leaves":
-                if (specificAnimal instanceof Herbivore) {
-                    ((Herbivore) specificAnimal).eatLeaves();
-                } else {
-                    System.out.println(specificAnimal.name + " won't eat meat.");
-                }
-                break;
-
-            case "give meat":
-                if (specificAnimal instanceof Carnivore) {
-                    ((Carnivore) specificAnimal).eatMeat();
-                } else {
-                    System.out.println(specificAnimal.name + " won't eat leaves.");
-                }
-                break;
-
-            case "perform trick":
-                if (specificAnimal instanceof PerformTrick) {
-                    ((PerformTrick) specificAnimal).performTrick();
-                } else if (specificAnimal == null) {
-                    for (Animal animal : animals.values()) {
-                        if (animal instanceof PerformTrick) {
-                            ((PerformTrick) animal).performTrick();
-                        }
+                case "give leaves":
+                    if (animal instanceof Herbivore) {
+                        ((Herbivore) animal).eatLeaves();
+                    } else {
+                        System.out.println(animal.name + " won't eat leaves.");
                     }
-                } else {
-                    System.out.println(specificAnimal.name + " won't't perform any tricks.");
-                }
-                break;
+                    break;
 
-            default:
-                System.out.println("Unknown command: " + command);
+                case "give meat":
+                    if (animal instanceof Carnivore) {
+                        ((Carnivore) animal).eatMeat();
+                    } else {
+                        System.out.println(animal.name + " won't eat meat.");
+                    }
+                    break;
 
+                case "perform trick":
+                    if (animal instanceof PerformTrick) {
+                        ((PerformTrick) animal).performTrick();
+                    } else {
+                        System.out.println(animal.name + " won't perform tricks.");
+                    }
+                    break;
+
+                default:
+                    System.out.println("Unknown command: " + command);
+                    System.exit(0);
+            }
         }
     }
 
